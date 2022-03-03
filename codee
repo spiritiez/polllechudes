@@ -1,7 +1,15 @@
-word = "белка"
+print("Выберете любую цифру из предложенных: 1, 2, 3 и введите ее:") #выбираем загаданное слово "вслепую"
+choice = input() 
+if choice == 1:
+    choice = "чай"
+if choice == 2:
+    choice = "вафли"
+if choice == 3:
+    choice = "часы"
+word = choice #присваиваем значение нашей главной переменной
 print("Добро пожаловать в игру! Перед вами зашифрованное слово, вы должны вводить буквы и отгадывать его. Подробнее о правилах игры узнайте с помощью команды helpme")
-gamepad = "*" * len(word)
-myenters = set()
+gamepad = "*" * len(word) #выводим звездочки на местах букв в загаданном слове
+myenters = set() 
 alphabet = "йцукенгшщзхъфывапролджэёячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЁЯЧСМИТЬБЮ"
 helpme = "mywins - буквы, введенные мной и сопадающие с какой-либо буквой из загаданного слова" + "\n" + "myenters - буквы, которые я вводил" + "\n" + "giveup - сдаться"
 mywins = set()
@@ -10,11 +18,11 @@ commands.add("helpme")
 commands.add("myenters")
 commands.add("mywins")
 commands.add("giveup")
-print(gamepad)
+print(gamepad) #выводим звездочки со строки 11
 attempts = len(word) * 2
-while attempts > 0:
-    ent = input() 
-    if ent in commands:
+while attempts > 0: #пока у нас не кончатся попытки, мы можем играть
+    ent = input() #ввод игрока
+    if ent in commands: #проверяем, не команда ли это
         if ent == "mywins":
             for elem in mywins:
                 print(elem, end=" ")
@@ -31,14 +39,14 @@ while attempts > 0:
             print("загаданное слово:", word)
             break
         attempts += 1
-    elif ent == word:
+    elif ent == word: #проверяем, не угадал ли игрок за одну попытку слово
         print(len(myenters), "попыток")
         print("ПОБЕДА")
         gamepad = word
         break 
-    elif ent in myenters:
+    elif ent in myenters: #проверяем,была ли введенная буква уже до этого
         print("такую букву вы уже пробовали")
-    elif ent in word:
+    elif ent in word: #если буква есть в слове
         print("верно!!!")
         letter = 0
         while word[letter] != ent:
@@ -46,7 +54,7 @@ while attempts > 0:
         gamepad = gamepad[:letter] + ent + gamepad[letter + 1:]
         myenters.add(ent)
         mywins.add(ent)
-        if gamepad == word: 
+        if gamepad == word: #проверяем, не угадал ли игрок за эту попытку слово
             print(len(myenters), "попыток")
             print("ПОБЕДА")
             break
@@ -56,8 +64,8 @@ while attempts > 0:
     else:
         print("ОШИБКА")
     print(gamepad)
-    attempts -= 1
-    print("осталось попыток:", attempts)
+    attempts -= 1 #уменьшаем количество попыток
+    print("осталось попыток:", attempts) #выводим количество попыток
 print(word)
 if gamepad != word and ent != "giveup":
    print("ПРОИГРЫШ")
