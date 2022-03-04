@@ -40,9 +40,9 @@ while attempts > 0: #пока у нас не кончатся попытки, м
             break
         attempts += 1
     elif ent == word: #проверяем, не угадал ли игрок за одну попытку слово
+        print(word)
         print(len(myenters), "попыток")
         print("ПОБЕДА")
-        gamepad = word
         break 
     elif ent in myenters: #проверяем,была ли введенная буква уже до этого
         print("такую букву вы уже пробовали")
@@ -54,8 +54,9 @@ while attempts > 0: #пока у нас не кончатся попытки, м
         gamepad = gamepad[:letter] + ent + gamepad[letter + 1:]
         myenters.add(ent)
         mywins.add(ent)
-        if gamepad == word: #проверяем, не угадал ли игрок за эту попытку слово
-            print(len(myenters), "попыток")
+        if gamepad == word: #проверяем, не угадал ли игрок за эту попытку слов
+            print(word)
+             print(len(myenters), "попыток")
             print("ПОБЕДА")
             break
     elif ent in alphabet and ent not in word:
@@ -66,7 +67,8 @@ while attempts > 0: #пока у нас не кончатся попытки, м
     print(gamepad)
     attempts -= 1 #уменьшаем количество попыток
     print("осталось попыток:", attempts) #выводим количество попыток
-print(word)
+    
+    
 if gamepad != word and ent != "giveup":
    print("ПРОИГРЫШ")
    print("загаданное слово:", word) 
