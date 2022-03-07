@@ -18,3 +18,23 @@
 - giveup - с помощью этой команды игрок может сдаться и увидеть загаданное слово, но при этом он проиграет
 
 Желаем удачи!
+
+
+POLE CHUDES
+
+This is a simple game that can help you pass the time in line, driving or waiting for someone. It was created on the basis of the famous TV program, from which it took its name.
+
+Well, now about the rules:
+At the beginning, the program displays the words of greeting and asterisks, behind which are hidden the letters of a word randomly selected and guessed by the game. The player is given twice as many attempts as there are letters in a word to completely solve it, otherwise he loses. For each of the moves, you will need to enter a letter (which, in your opinion, may be in the word that the program has guessed) or the supposedly encrypted word itself.
+
+How to make a move?
+Extremely simple: you click on the letter that you think is possible in the hidden word, and if it really is in it, the program will inform you about it and it will appear in place of the asterisk that closes this letter. If the letter is incorrect, then "неверно" will be displayed, and if you entered a letter from another alphabet or a number, the game will print "ОШИБКА". In one move, you can also enter the whole word, if you think that it was just guessed by the program.
+After each move, the player is shown the number of attempts he has left.
+
+Also, during his turn, the player can enter any code word, each of which means a certain command (during this move, the number of attempts does not decrease):
+- helpme - will display the rules of the game
+- myenters - all letters entered by the player for the current round will be displayed
+- mywins - letters guessed by the player for the current round
+- giveup - with this command, the player can give up and see the hidden word, but at the same time he will lose
+
+Good luck!
